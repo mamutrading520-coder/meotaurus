@@ -1132,8 +1132,7 @@ async def execute_tool_block(
     from src.tool_implementations import (
         do_create_document, do_update_document, do_edit_document,
         do_suggest_document, do_search_chats, do_manage_tasks,
-        do_manage_skills, do_api_call, do_manage_endpoints,
-        do_manage_mcp, do_manage_webhooks, do_manage_tokens,
+        do_manage_skills, do_api_call,
         do_manage_documents, do_manage_settings, do_manage_notes,
         do_manage_calendar,
         do_download_model, do_serve_model, do_list_served_models, do_stop_served_model,
@@ -1146,6 +1145,13 @@ async def execute_tool_block(
         do_vault_search, do_vault_get, do_vault_unlock,
         do_app_api,
     )
+    from services.platform import (
+        do_manage_endpoints,
+        do_manage_mcp,
+        do_manage_webhooks,
+        do_manage_tokens,
+    )
+
 
     tool = block.tool_type
     content = block.content
