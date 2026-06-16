@@ -1,5 +1,0 @@
-./app.py:from routes.note_routes import setup_note_routes
-./app.py:app.include_router(setup_note_routes(task_scheduler))
-./routes/note_routes.py:# Scheduler reference — set by setup_note_routes() so dispatch_reminder can
-./routes/note_routes.py:def setup_note_routes(task_scheduler=None):
-./tests/test_note_reminder_fire_scope.py:    router = note_routes.setup_note_routes()

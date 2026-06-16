@@ -1,4 +1,0 @@
-./app.py:from routes.contacts_routes import setup_contacts_routes
-./app.py:app.include_router(setup_contacts_routes())
-./routes/contacts_routes.py:def setup_contacts_routes():
-./tests/test_contacts_add_null_name.py:    router = cr.setup_contacts_routes()

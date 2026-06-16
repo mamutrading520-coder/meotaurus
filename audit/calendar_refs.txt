@@ -1,6 +1,0 @@
-./app.py:from routes.calendar_routes import setup_calendar_routes
-./app.py:calendar_router = setup_calendar_routes()
-./routes/calendar_routes.py:def setup_calendar_routes() -> APIRouter:
-./tests/test_calendar_owner_scope.py:    mod = __import__("routes.calendar_routes", fromlist=["setup_calendar_routes"])
-./tests/test_calendar_owner_scope.py:    router = calendar_routes.setup_calendar_routes()
-./tests/test_caldav_writeback_route.py:    router = croutes.setup_calendar_routes()

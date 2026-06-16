@@ -1,9 +1,0 @@
-./app.py:from routes.email_routes import setup_email_routes
-./app.py:email_router = setup_email_routes()
-./routes/email_helpers.py:# Filled in by setup_email_routes() once its closure-scoped pool helpers are
-./routes/email_helpers.py:    Falls back to a fresh connect+logout pair before `setup_email_routes()`
-./routes/email_routes.py:def setup_email_routes():
-./tests/test_schedule_email_offset_normalization.py:    router = email_routes.setup_email_routes()
-./tests/test_email_owner_scope.py:    router = email_routes.setup_email_routes()
-./tests/test_email_owner_scope.py:    router = email_routes.setup_email_routes()
-./tests/test_email_imap_timeout.py:    router = email_routes.setup_email_routes()

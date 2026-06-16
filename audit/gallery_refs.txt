@@ -1,3 +1,0 @@
-./app.py:from routes.gallery_routes import setup_gallery_routes
-./app.py:app.include_router(setup_gallery_routes())
-./routes/gallery_routes.py:def setup_gallery_routes() -> APIRouter:
