@@ -682,7 +682,7 @@ async def test_webhook_tool_reuses_private_url_validation():
     monkeypatch.setitem(sys.modules, "core.database", fake_core_db)
     monkeypatch.setitem(sys.modules, "src.database", fake_src_db)
 
-    from src.tool_implementations import do_manage_webhooks
+    from services.platform import do_manage_webhooks
 
     try:
         result = await do_manage_webhooks(

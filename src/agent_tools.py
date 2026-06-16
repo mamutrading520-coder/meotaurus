@@ -104,11 +104,16 @@ from src.tool_implementations import (  # noqa: E402, F401
     do_search_chats,
     do_manage_skills,
     do_manage_tasks,
-    do_manage_endpoints,
-    do_manage_mcp,
-    do_manage_webhooks,
-    do_manage_tokens,
     do_manage_documents,
     do_manage_settings,
     do_api_call,
 )
+
+
+from services.platform import (
+    do_manage_endpoints,
+    do_manage_mcp,
+    do_manage_webhooks,
+    do_manage_tokens,
+)
+
