@@ -1,13 +1,8 @@
-# services/docs/__init__.py
-"""Docs service — personal document RAG with ChromaDB.
+"""Docs services package.
 
-Thin facade: DocsService lives here, RAGManager/VectorRAG are re-exported
-from the canonical implementations in src/.
+Exports are lazy so importing lightweight management tools does not
+eagerly initialize RAG/vector dependencies.
 """
-
-from .service import DocsService, DocChunk, IndexResult
-from src.rag_manager import RAGManager
-from src.rag_vector import VectorRAG
 
 __all__ = [
     "DocsService",
@@ -15,4 +10,33 @@ __all__ = [
     "IndexResult",
     "RAGManager",
     "VectorRAG",
+    "do_manage_documents",
 ]
+
+
+def __getattr__(name):
+    if name in {"DocsService", "DocChunk", "IndexResult"}:
+        from .service import DocsService, DocChunk, IndexResult
+
+        return {
+            "DocsService": DocsService,
+            "DocChunk": DocChunk,
+            "IndexResult": IndexResult,
+        }[name]
+
+    if name == "RAGManager":
+        from src.rag_manager import RAGManager
+
+        return RAGManager
+
+    if name == "VectorRAG":
+        from src.rag_vector import VectorRAG
+
+        return VectorRAG
+
+    if name == "do_manage_documents":
+        from .management_service import do_manage_documents
+
+        return do_manage_documents
+
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
